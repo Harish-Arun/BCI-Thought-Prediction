@@ -1,0 +1,65 @@
+<!doctype html>
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/index.css') }}">
+<title>InnerSpeech</title>
+<body>
+    <h1>Brain Computer Interface</h1>
+    <h2>- Thought Prediction</h2>
+    
+    <form method=post enctype=multipart/form-data>
+      <div class="file-upload">
+        <label class="file-upload-label">
+            Browse
+            <input type="file" name="file">
+        </label>
+        {% if message %}
+            <p>{{ message }}</p>
+        {% endif %}
+    </div>
+    <input type=submit value=Upload>
+    {% if not predicted %}
+        <div class="triangles-container">
+            <div>
+                <p>Up Triangle</p>
+                <img src="{{ url_for('static', filename='assets/0.png') }}" alt="Class 0 Image">
+            </div>
+            <div>
+                <p>Down Triangle</p>
+                <img src="{{ url_for('static', filename='assets/1.png') }}" alt="Class 1 Image">
+            </div>
+            <div>
+                <p>Left Triangle</p>
+                <img src="{{ url_for('static', filename='assets/2.png') }}" alt="Class 2 Image">
+            </div>
+            <div>
+                <p>Right Triangle</p>
+                <img src="{{ url_for('static', filename='assets/3.png') }}" alt="Class 3 Image">
+            </div>
+        </div>
+    {% endif %}
+    </form>
+    <!-- {% if message %}
+      <p>{{ message }}</p>
+    {% endif %} -->
+    <div class="image-container">
+        {% if predicted %}
+        <div>
+            <p>Predicted Class: {{pred_class}} Triangle</p>
+            <img src="{{ url_for('static', filename='assets/' + predicted + '.png') }}" alt="EEG Image">
+        </div>
+        {% endif %}
+        
+        {% if y %}
+        <div>
+            <p>Actual Class: {{y_class}} Triangle</p>
+            <img src="{{ url_for('static', filename='assets/' + y + '.png') }}" alt="EEG Image">
+        </div>
+        {% endif %}
+    </div>
+    <div>
+        {% if predicted %}
+            <a href="/showbands">
+                <input type="button" value="WaveForms" />
+            </a>
+        {% endif %}
+    </div>
+</body>

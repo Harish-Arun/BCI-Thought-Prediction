@@ -1,0 +1,7 @@
+mne
+numpy
+matplotlib
+scikit-learn
+gradio
+flask
+mpld3

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/bands.css') }}">
+    <title>WaveForms</title>
+</head>
+<body>
+    <a href="/">
+        <input type="button" value="Home" />
+    </a>
+    <div>
+        <p>Delta (0.5 - 4 Hz)</p>
+        <img src="{{ url_for('static', filename='plots/Delta.png') }}" alt="Delta wave">
+        <p>Theta (4 - 8 Hz)</p>
+        <img src="{{ url_for('static', filename='plots/Theta.png') }}" alt="Theta wave">
+        <p>Alpha (8 - 12 Hz)</p>
+        <img src="{{ url_for('static', filename='plots/Alpha.png') }}" alt="Alpha wave">
+        <p>Beta (12 - 30 Hz)</p>
+        <img src="{{ url_for('static', filename='plots/Beta.png') }}" alt="Beta wave">
+        <p>Gamma (30 - 45 Hz)</p>
+        <img src="{{ url_for('static', filename='plots/Gamma.png') }}" alt="Gamma wave">
+    </div>
+</body>
+</html>
