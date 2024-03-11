@@ -18,12 +18,12 @@ BCI Thought Prediction is a Flask-based project that implements a Brain-Computer
    python -m venv bcienv
    
 3. **Activate Virtual Environment:**
-  1. Windows
-     ```bash
-     venv\Scripts\activate
-  2. Mac/Linux
-     ```bash
-     source venv/bin/activate
+     1. Windows
+        ```bash
+        venv\Scripts\activate
+     2. Mac/Linux
+        ```bash
+        source venv/bin/activate
    
  4. **Install Dependencies:**
     ```bash
